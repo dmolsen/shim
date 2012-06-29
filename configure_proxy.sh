@@ -16,7 +16,7 @@ sudo ipfw pipe 1 delete
 
 if [ "$BW" -ne "0" ] || [ "$DL" -ne "0" ]; then
 	echo "adding traffic shaping for all tcp requests ..."
-	sudo ipfw add 02000 pipe 1 tcp from any to any dst-port 80 in recv en1
+	sudo ipfw add 02000 pipe 1 out via en1
 	if [ "$BW" -ne "0" ]; then
 		BWF="bw "$BW"KByte/s"
 	else
