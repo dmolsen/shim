@@ -25,7 +25,7 @@ if (isset($_POST["submit"])) {
 		$l = "delay ".$_POST["latency"]."ms ";
 	}
 	if (isset($_POST["network"]) && array_key_exists($_POST["network"],$bArray)) {
-		$b = "bw ".$bArray[$_POST["network"]]."KByte/s ";
+		$b = "bw ".$bArray[$_POST["network"]]."Kbyte/s ";
 	}
 	if (($l != "") || ($b != "")) {
 		$c = "sudo ipfw add 02000 pipe 1 out via en1\n";
