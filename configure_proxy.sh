@@ -18,7 +18,7 @@ if [ "$BW" -ne "0" ] || [ "$DL" -ne "0" ]; then
 	echo "adding traffic shaping for all tcp requests ..."
 	sudo ipfw add 02000 pipe 1 out via en1
 	if [ "$BW" -ne "0" ]; then
-		BWF="bw "$BW"KByte/s"
+		BWF="bw "$BW"Kbyte/s"
 	else
 		BWF=""
 	fi
