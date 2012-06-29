@@ -28,7 +28,7 @@ if (isset($_POST["submit"])) {
 		$b = "bw ".$bArray[$_POST["network"]]."KByte/s ";
 	}
 	if (($l != "") || ($b != "")) {
-		$c = "sudo ipfw add 02000 pipe 1 tcp from any to any dst-port 80 in recv en1\n";
+		$c = "sudo ipfw add 02000 pipe 1 out via en1\n";
 		$c .= "sudo ipfw pipe 1 config ".$l.$b;
 	}
 	file_put_contents($fName,$c);
